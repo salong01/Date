@@ -72,6 +72,50 @@ public class Date{
 		return numDays;
 	}
 
+	public boolean dayCorrect(int day, int month){
+
+		correctDay=false;
+
+		switch(month){
+			case 1: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 2: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 3: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 4: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 5: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 6: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 7: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 8: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 9: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 10: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 11: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+			case 12: if((day<= dayOfMonth(month)) && day >=0){
+					correctDay=true;
+				} 
+		}
+	return correctDay;
+	}
 	public String nameMonth(int month){
 
 		this.month=month;
