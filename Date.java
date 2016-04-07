@@ -77,6 +77,7 @@ public class Date{
 		correctDay=false;
 
 		switch(month){
+
 			case 1: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
