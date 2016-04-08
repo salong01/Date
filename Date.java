@@ -1,47 +1,28 @@
-package es.unileon.prog.date;
-
 public class Date{
 
 	private int day;
 	private int month;
 	private int year;
 
-	public int getDay (){
-		return this.day;
+
+	Date(int day, int month, int year){
+
+		try{
+
+			this.day=day;
+			this.month=month;
+			this.year=year;
+
+		}catch(Exception msg){
+			System.err.println(msg.getMessage());
+		}
 	}
 
-	public void setDay(){
-		this.day=day;
-	}
-
-	public int getMonth(){
-		return this.month;
-	}
-
-	public void setMonth(){
-		this.day=day;
-	}
-
-	public int getYear(){
-		return this.year;
-	}
-
-	public void setYear(){
-		this.year=year;
-	}
-
-	Date(int dia, int mes, int anho){
-
-		this.day=dia;
-		this.month=mes;
-		this.year=anho;
-	}
-
-	boolean isSameDay(){
+	boolean isSameDay(Date date){
 
 		boolean sameDay=false;
 
-		if (this.day()==date2.getDate()){
+		if (this.day== getDay()){
 
 			sameDay=true;
 		}
@@ -53,7 +34,7 @@ public class Date{
 
 		boolean sameMonth=false;
 
-		if (this.month == date2.getMonth()){
+		if (this.month == getMonth()){
 
 			sameMonth=true;
 		}
@@ -65,7 +46,7 @@ public class Date{
 
 		boolean sameYear=false;
 
-		if (this.year()==date2.getYear()){
+		if (this.year == getYear()){
 
 			sameYear=true;
 		}
@@ -76,7 +57,7 @@ public class Date{
 	public int daysOfMonth(int month){
 
 		this.month=month;
-		int numDays;
+		int numDays = 0;
 		switch(month){
 
 			case 1:	numDays=31;
@@ -98,55 +79,55 @@ public class Date{
 
 	public boolean dayCorrect(int day, int month){
 
-		correctDay=false;
+		boolean correctDay = false;
 
 		switch(month){
 
-			case 1: if((day<= dayOfMonth(month)) && day >=0){
+			case 1: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 2: if((day<= dayOfMonth(month)) && day >=0){
+			case 2: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 3: if((day<= dayOfMonth(month)) && day >=0){
+			case 3: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 4: if((day<= dayOfMonth(month)) && day >=0){
+			case 4: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 5: if((day<= dayOfMonth(month)) && day >=0){
+			case 5: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 6: if((day<= dayOfMonth(month)) && day >=0){
+			case 6: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 7: if((day<= dayOfMonth(month)) && day >=0){
+			case 7: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 8: if((day<= dayOfMonth(month)) && day >=0){
+			case 8: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 9: if((day<= dayOfMonth(month)) && day >=0){
+			case 9: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 	
 				break;
-			case 10: if((day<= dayOfMonth(month)) && day >=0){
+			case 10: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 11: if((day<= dayOfMonth(month)) && day >=0){
+			case 11: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
-			case 12: if((day<= dayOfMonth(month)) && day >=0){
+			case 12: if((day<= daysOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
 				break;
@@ -250,7 +231,7 @@ public class Date{
 
 	public void sameDate(){
 
-		if (isSameDay==true){
+		if (isSameDay(null)==true){
 			System.out.println("It's the same day");
 		}
 	
@@ -258,7 +239,7 @@ public class Date{
 			System.out.println("Days are diferent");
 		}
 
-		if (isSameMonth==true){
+		if (isSameMonth(null)==true){
 			System.out.println("It's the same month");
 		}
 	
@@ -266,7 +247,7 @@ public class Date{
 			System.out.println("Months are diferent");
 		}
 
-		if (isSameYear==true){
+		if (isSameYear(null)==true){
 			System.out.println("It's the same year");
 		}
 	
@@ -292,37 +273,39 @@ public class Date{
 
 	}
 
-	public void datesUntilEndMonth(int day, int month, int year);
 
-		this.day=day;
-		this.month=month;
-		this.year=year;
-
-		for (int i=day ; i<= daysOfMonth(month); i++){
-
-			System.out.println(i +" / " + month + " / " +year);
-		}
-	}
 
 	public void monthsSameDays(int month){
 
 		this.month=month;
 
 		for(int i=1; i<=12; i++){
-			if (dayOfMonth(month)==dayOfMonth(i)){
-				System.out.println(nameMonth(i)/*".\n"*/);
+			if (daysOfMonth(month)==daysOfMonth(i)){
+				System.out.println(nameMonth(i));
 			}
+
 		}
 	}
 
-	
-}
+	public void numberOfDays(int day, int month){
+
+		this.month=month;
+		this.day=day;
+
+		int numberDays=day;
+		
+		for (int i=1; i<=month; i++){
+			numberDays+=daysOfMonth(i);
+		}
+
+		System.out.println(numberDays);
+	}
 
 	public int getDay (){
 		return this.day;
 	}
 
-	public void setDay(){
+	public void setDay(int day){
 		this.day=day;
 	}
 
@@ -330,23 +313,16 @@ public class Date{
 		return this.month;
 	}
 
-	public void setMonth(){
-		this.day=day;
+	public void setMonth(int month){
+		this.month=month;
 	}
 
 	public int getYear(){
 		return this.year;
 	}
 
-	public void setYear(){
+	public void setYear(int year){
 		this.year=year;
 	}
-/*
-main
+}
 
-	Date date1= new date (dia, mes, anho);
-	Date date2= new date (dia, mes, anho);
-
-date1.issameyear(date2);
-
-*/
