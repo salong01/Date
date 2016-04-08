@@ -1,3 +1,5 @@
+package es.unileon.prg.date;
+
 public class Date{
 
 	private int day;
@@ -5,17 +7,32 @@ public class Date{
 	private int year;
 
 
-	Date(int day, int month, int year){
+	public Date (int day, int month, int year) throws DateException{
 
-		try{
+		StringBuffer message= new StringBuffer("");
+		
+		if (month<=12 && month >=1){
 
-			this.day=day;
 			this.month=month;
+
+		}
+
+		else{
+			message.append("Wrong month");
+		}
+
+		if(day<=daysOfMonth(month) && day>=1){ 
+	
+			this.day=day;
+
+		}
+
+		else {
+			message.append("Wrong day");
+		}
 			this.year=year;
 
-		}catch(Exception msg){
-			System.err.println(msg.getMessage());
-		}
+		
 	}
 
 	boolean isSameDay(Date date){
@@ -299,6 +316,11 @@ public class Date{
 		}
 
 		System.out.println(numberDays);
+	}
+
+	public void numbeOfAttemps(int year){
+
+
 	}
 
 	public int getDay (){

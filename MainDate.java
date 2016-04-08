@@ -1,5 +1,4 @@
-package es.unileon.prg.Date;
-import java.util.Scanner;
+package es.unileon.prg.date;
 
 public class MainDate{
 
@@ -7,7 +6,6 @@ public class MainDate{
 
 		Date date1= new date (day, month, year);
 		Date date2= new date (day, month, year);
-
 		
 	}
 
