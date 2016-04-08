@@ -6,7 +6,31 @@ public class Date{
 	private int month;
 	private int year;
 
-	public date(int dia, int mes, int anho){
+	public int getDay (){
+		return this.day;
+	}
+
+	public void setDay(){
+		this.day=day;
+	}
+
+	public int getMonth(){
+		return this.month;
+	}
+
+	public void setMonth(){
+		this.day=day;
+	}
+
+	public int getYear(){
+		return this.year;
+	}
+
+	public void setYear(){
+		this.year=year;
+	}
+
+	Date(int dia, int mes, int anho){
 
 		this.day=dia;
 		this.month=mes;
@@ -64,7 +88,7 @@ public class Date{
 			case 7: numDays=31;
 			case 8: numDays=31;
 			case 9: numDays=30;
-			case 10 numDays=31;
+			case 10: numDays=31;
 			case 11: numDays=30;
 			case 12: numDays=31;
 		}
@@ -81,42 +105,55 @@ public class Date{
 			case 1: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 2: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 3: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 4: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 5: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 6: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 7: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 8: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 9: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
-				} 
+				} 	
+				break;
 			case 10: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 11: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 			case 12: if((day<= dayOfMonth(month)) && day >=0){
 					correctDay=true;
 				} 
+				break;
 		}
 	return correctDay;
 	}
+
 	public String nameMonth(int month){
 
 		this.month=month;
@@ -211,57 +248,99 @@ public class Date{
 		return season;
 	}
 
-	if (isSameDay==true){
-		System.out.println("El dia es el mismo");
-	}
+	public void sameDate(){
+
+		if (isSameDay==true){
+			System.out.println("It's the same day");
+		}
 	
-	else {
-		System.out.println("El dia no es el mismo");
-	}
+		else {
+			System.out.println("Days are diferent");
+		}
 
-	if (isSameMonth==true){
-		System.out.println("El mes es el mismo");
-	}
+		if (isSameMonth==true){
+			System.out.println("It's the same month");
+		}
 	
-	else {
-		System.out.println("El mes no es el mismo");
-	}
+		else {
+			System.out.println("Months are diferent");
+		}
 
-	if (isSameYear==true){
-		System.out.println("El año es el mismo");
-	}
+		if (isSameYear==true){
+			System.out.println("It's the same year");
+		}
 	
-	else {
-		System.out.println("El año no es el mismo");
-	}	
+		else {
+			System.out.println("Years are diferent");
+		}	
+	}
+
+	public void monthsUntilEndYear(int month){
+
+		this.month=month;
+		int monthEndYear=0;
+		for(int i=month; i<= 12; i++){
+			monthEndYear++;
+		}
+		System.out.println(monthEndYear);
+
+	}
+
+	public void printDate(int day, int month, int year){
+
+		System.out.println(day +" / " + month + " / " +year);
+
+	}
+
+	public void datesUntilEndMonth(int day, int month, int year);
+
+		this.day=day;
+		this.month=month;
+		this.year=year;
+
+		for (int i=day ; i<= daysOfMonth(month); i++){
+
+			System.out.println(i +" / " + month + " / " +year);
+		}
+	}
+
+	public void monthsSameDays(int month){
+
+		this.month=month;
+
+		for(int i=1; i<=12; i++){
+			if (dayOfMonth(month)==dayOfMonth(i)){
+				System.out.println(nameMonth(i)/*".\n"*/);
+			}
+		}
+	}
+
+	
 }
 
+	public int getDay (){
+		return this.day;
+	}
 
-int getDay (){
-	return this.day;
-}
+	public void setDay(){
+		this.day=day;
+	}
 
-void setDay(){
-	this.day=day;
-}
+	public int getMonth(){
+		return this.month;
+	}
 
-int getMonth(){
-	return this.month;
-}
+	public void setMonth(){
+		this.day=day;
+	}
 
-void setMonth(){
-	this.day=day;
-}
+	public int getYear(){
+		return this.year;
+	}
 
-int getYear(){
-	return this.year;
-}
-
-void setYear(){
-	this.year=year;
-}
-
-
+	public void setYear(){
+		this.year=year;
+	}
 /*
 main
 
@@ -269,3 +348,5 @@ main
 	Date date2= new date (dia, mes, anho);
 
 date1.issameyear(date2);
+
+*/
